@@ -13,7 +13,7 @@ public class ListMaker {
         do {
             displayList();
             displayMenu();
-            cmd = SafeInput.getRegExString(in, "Choose an option:", "[AaDdIiPpQq]");
+            cmd = SafeInput.getRegExString(in, "Choose an option", "[AaDdIiPpQq]");
 
             switch (cmd.toUpperCase()) {
                 case "A":
@@ -58,7 +58,7 @@ public class ListMaker {
     }
 
     private static void addItem() {
-        String item = SafeInput.getNonZeroLenString(in, "enter the item you want to add");
+        String item = SafeInput.getNonZeroLenString(in, "Enter the item you want to add");
         arrayList.add(item);
     }
 
@@ -69,12 +69,12 @@ public class ListMaker {
         }
         int num = SafeInput.getRangedInt(in, "Enter the number of the item you want to delete", 1, arrayList.size());
         String removed = arrayList.remove(num - 1);
-        System.out.println("Delted: " + removed);
+        System.out.println("Deleted: " + removed);
     }
 
     private static void insertItem() {
         int num = SafeInput.getRangedInt(in, "Enter the location number to insert at", 1, arrayList.size() + 1);
-        String item = SafeInput.getNonZeroLenString(in, "enter the item to insert");
+        String item = SafeInput.getNonZeroLenString(in, "Enter the item to insert");
         arrayList.add(num - 1, item);
     }
 
